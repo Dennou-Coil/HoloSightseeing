@@ -222,9 +222,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Zigsim\GPS_Getter.cs" />
-    <Compile Include="Assets\Zigsim\Zigsim.cs" />
-    <Compile Include="Assets\Zigsim\ZigsimJSON.cs" />
+    <Compile Include="Assets\Scripts\OSC\Osc.cs" />
+    <Compile Include="Assets\Scripts\OSC\TouchOscServer.cs" />
+    <Compile Include="Assets\Scripts\Zigsim\GPS_Getter.cs" />
+    <Compile Include="Assets\Scripts\Zigsim\Zigsim.cs" />
+    <Compile Include="Assets\Scripts\Zigsim\ZigsimJSON.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
