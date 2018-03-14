@@ -540,7 +540,8 @@ PlayerSettings:
   webGLUseEmbeddedResources: 0
   webGLUseWasm: 0
   webGLCompressionFormat: 1
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    14: 
   platformArchitecture: {}
   scriptingBackend:
     Metro: 2
@@ -551,12 +552,12 @@ PlayerSettings:
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: HoloGPSReceiver
-  metroPackageVersion: 1.0.0.0
-  metroCertificatePath: 
+  metroPackageVersion: 1.0.2.0
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: DefaultCompany
+  metroCertificateIssuer: DefaultCompany
+  metroCertificateNotAfter: 00c9449939dad401
   metroApplicationDescription: HoloGPSReceiver
   wsaImages: {}
   metroTileShortName: HoloGPSReceiver
