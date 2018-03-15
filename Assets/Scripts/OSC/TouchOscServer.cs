@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.Events;
 
 #if UNITY_EDITOR
 using System.Net;
@@ -12,8 +13,11 @@ using Windows.Networking.Sockets;
 
 public class TouchOscServer : MonoBehaviour
 {
-    [SerializeField]
-    int listenPort = 3333;
+    [HideInInspector] public TouchOscServer instance;
+
+    [System.Serializable] public class OnMessageCallback : UnityEvent<Osc.Message> { }
+    [SerializeField] private OnMessageCallback onMessageCallback;
+    [SerializeField] int listenPort = 3333;
 
     Osc.Parser osc_ = new Osc.Parser();
 
@@ -29,9 +33,10 @@ public class TouchOscServer : MonoBehaviour
 
     void Start()
     {
-        Assert.IsNotNull(handler, "should set handler.");
+        instance = this;
         endPoint_ = new IPEndPoint(IPAddress.Any, listenPort);
         udpClient_ = new UdpClient(endPoint_);
+        onMessageCallback.AddListener(OnMessage);
     }
 
     void Update()
@@ -45,7 +50,7 @@ public class TouchOscServer : MonoBehaviour
         while (osc_.MessageCount > 0)
         {
             var msg = osc_.PopMessage();
-            OnMessage(msg);
+            onMessageCallback.Invoke(msg);
         }
     }
 #else
@@ -71,7 +76,7 @@ public class TouchOscServer : MonoBehaviour
         lock (lockObject_) {
             while (osc_.MessageCount > 0) {
                 var msg = osc_.PopMessage();
-                OnMessage(msg);
+                onMessageCallback.Invoke(msg);
             }
         }
     }
@@ -86,6 +91,4 @@ public class TouchOscServer : MonoBehaviour
         }
     }
 #endif
-}
-
 }
