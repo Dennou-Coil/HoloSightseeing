@@ -21,12 +21,6 @@ public class TouchOscServer : MonoBehaviour
 
     Osc.Parser osc_ = new Osc.Parser();
 
-    void OnMessage(Osc.Message msg)
-    {
-        // ここで適当に処理する
-        Debug.LogFormat("{0} => {1}", msg.path, msg.data[0]);
-    }
-
 #if UNITY_EDITOR
     UdpClient udpClient_;
     IPEndPoint endPoint_;
@@ -36,7 +30,6 @@ public class TouchOscServer : MonoBehaviour
         instance = this;
         endPoint_ = new IPEndPoint(IPAddress.Any, listenPort);
         udpClient_ = new UdpClient(endPoint_);
-        onMessageCallback.AddListener(OnMessage);
     }
 
     void Update()
