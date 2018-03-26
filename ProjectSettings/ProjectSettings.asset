@@ -658,7 +658,7 @@ PlayerSettings:
   cloudServicesEnabled:
     UNet: 1
   facebookSdkVersion: 7.9.4
-  apiCompatibilityLevel: 2
+  apiCompatibilityLevel: 3
   cloudProjectId: 2f2caad6-82a6-4b07-8ca2-a5e2ba3c9682
   projectName: HoloGPSReceiver
   organizationId: kotton
