@@ -11,6 +11,7 @@ namespace GATARI.HoloLensGPS {
         public static GPSMapService Instance { get; private set; }
         public float compassOffset;
         public PlayerPosture Posture { get; private set; }
+        bool isPositionUpdated, isAngleUpdated;
         
         // Use this for initialization
         private void Awake() {
@@ -34,16 +35,22 @@ namespace GATARI.HoloLensGPS {
             if (msg.path.Contains("gps")) {
                 Posture.playerPosition[0] = double.Parse(msg.data[0].ToString());
                 Posture.playerPosition[1] = double.Parse(msg.data[1].ToString());
+                isPositionUpdated = true;
             } else if (msg.path.Contains("compass")) {
-                Posture.playerAngle = float.Parse(msg.data[0].ToString());
+                Posture.playerAngle = double.Parse(msg.data[0].ToString());
+                isAngleUpdated = true;
             }
-            onPostureUpdate.Invoke(Posture);
+            if (isAngleUpdated && isPositionUpdated) {
+                onPostureUpdate.Invoke(Posture);
+                isPositionUpdated = false;
+                isAngleUpdated = false;
+            }
         }
     }
 
     [System.Serializable]
     public class PlayerPosture {
-        [SerializeField] public float playerAngle;
+        [SerializeField] public double playerAngle;
         [SerializeField] public double[] playerPosition;
     }
 }
