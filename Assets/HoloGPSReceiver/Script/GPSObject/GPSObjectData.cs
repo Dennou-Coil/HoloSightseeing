@@ -59,8 +59,8 @@ namespace GATARI.HoloLensGPS {
                 areaOutboundRadius = value;
             }
         }
-
-        [SerializeField] public ReactiveProperty<bool> IsInside;
+        public ReactiveProperty<bool> IsInside;
+        [SerializeField] bool isInside;
 
         [SerializeField] double distance;
         public double Distance { get {
@@ -92,6 +92,8 @@ namespace GATARI.HoloLensGPS {
 
         private void OnEnable() {
             IsInside = new ReactiveProperty<bool>(false);
+            Distance = double.MaxValue;
+            Angle = 0;
         }
 
         public void UpdateInformation(double[] playerPosition, double playerAngle) {

@@ -749,6 +749,105 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!1001 &982550381
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4170064958332284, guid: 47770b55e1c12ce408617896e9c3bf4a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170064958332284, guid: 47770b55e1c12ce408617896e9c3bf4a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170064958332284, guid: 47770b55e1c12ce408617896e9c3bf4a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170064958332284, guid: 47770b55e1c12ce408617896e9c3bf4a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170064958332284, guid: 47770b55e1c12ce408617896e9c3bf4a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170064958332284, guid: 47770b55e1c12ce408617896e9c3bf4a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170064958332284, guid: 47770b55e1c12ce408617896e9c3bf4a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170064958332284, guid: 47770b55e1c12ce408617896e9c3bf4a, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170064958332284, guid: 47770b55e1c12ce408617896e9c3bf4a, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170064958332284, guid: 47770b55e1c12ce408617896e9c3bf4a, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170064958332284, guid: 47770b55e1c12ce408617896e9c3bf4a, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656755128387796, guid: 47770b55e1c12ce408617896e9c3bf4a, type: 2}
+      propertyPath: m_Name
+      value: GPSObject (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114010691834998156, guid: 47770b55e1c12ce408617896e9c3bf4a, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 47770b55e1c12ce408617896e9c3bf4a, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &982550382 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1656755128387796, guid: 47770b55e1c12ce408617896e9c3bf4a,
+    type: 2}
+  m_PrefabInternal: {fileID: 982550381}
+--- !u!102 &982550383 stripped
+TextMesh:
+  m_PrefabParentObject: {fileID: 102006299082054158, guid: 47770b55e1c12ce408617896e9c3bf4a,
+    type: 2}
+  m_PrefabInternal: {fileID: 982550381}
+--- !u!114 &982550384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 982550382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5bf237ed7d7f4d4ca08137be319c519, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gpsObjectData: {fileID: 11400000, guid: b0811f2698eb44543843f4def9a594d9, type: 2}
+  textMesh: {fileID: 982550383}
+--- !u!95 &982550385
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 982550382}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ae9c920dc054e7e4db0d9608d6c7cbd0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1016262280 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1656755128387796, guid: 47770b55e1c12ce408617896e9c3bf4a,
