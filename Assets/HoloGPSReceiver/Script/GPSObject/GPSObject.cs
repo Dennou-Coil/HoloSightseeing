@@ -26,13 +26,11 @@ namespace GATARI.HoloLensGPS {
         }
 
         public void Activate(GPSObjectData data) {
-            Debug.Log(data.Angle);
             var radianAngle = data.Angle / 180 * Math.PI;
-            Debug.Log(radianAngle);
             transform.position = new Vector3((float)(data.Distance * Math.Sin(radianAngle)), 0, (float)(data.Distance * Math.Cos(radianAngle)));
-            Debug.Log(transform.position);
             textMesh.text = data.GPSObjectName;
             anim.SetBool("isVisible", true);
+            AreaEnterDebug.Instance.UpdateDebugText(data);
         }
 
         public void Deactivate() {
