@@ -5,9 +5,13 @@ using UnityEngine.UI;
 
 namespace GATARI.HoloLensGPS {
 
+    [DefaultExecutionOrder(-100)]
     public class AreaEnterDebug : MonoBehaviour {
+        public static AreaEnterDebug Instance { get; private set; }
+
         Text text;
         private void Start() {
+            Instance = this;
             text = GetComponent<Text>();
         }
 
