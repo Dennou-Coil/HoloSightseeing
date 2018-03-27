@@ -30,7 +30,10 @@ namespace GATARI.HoloLensGPS {
         }
 
         public static double Angle(double[] _from, double[] _to, double angle) {
-            var unnormalizedAngle = 90 - Math.Atan2(Math.Sin(_to[0] - _from[0]), Math.Cos(_from[1]) * Math.Tan(_to[1]) - Math.Sin(_from[1]) * Math.Cos(_to[0] - _from[0])) - angle;
+            //var unnormalizedAngle = Math.Atan2(Math.Sin(_to[0] - _from[0]), Math.Cos(_from[1]) * Math.Tan(_to[1]) - Math.Sin(_from[1]) * Math.Cos(_to[0] - _from[0])) * 180 / Math.PI - angle;
+            var Y = Math.Cos(Deg2Rad(_to[1])) * Math.Sin(Deg2Rad(_to[0]) - Deg2Rad(_from[0]));
+            var X = Math.Cos(Deg2Rad(_from[1])) * Math.Sin(Deg2Rad(_to[1])) - Math.Sin(Deg2Rad(_from[1])) * Math.Cos(Deg2Rad(_to[1])) * Math.Cos(Deg2Rad(_to[0]) - Deg2Rad(_from[0]));
+            var unnormalizedAngle = 180 * Math.Atan2(Y, X) / Math.PI + 90 - angle;
             if (unnormalizedAngle < 0) {
                 return unnormalizedAngle + 360;
             } else if (unnormalizedAngle > 360) {

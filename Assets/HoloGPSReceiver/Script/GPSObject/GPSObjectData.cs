@@ -106,8 +106,7 @@ namespace GATARI.HoloLensGPS {
         }
 
         public bool IsExiting(double[] playerPosition) {
-            var distance = GPSUtility.HubenyDistance(playerPosition, Position);
-            return AreaOutboundRadius < distance;
+            return AreaOutboundRadius < Distance;
         }
     }
 }
