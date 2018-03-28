@@ -53,17 +53,21 @@ namespace GATARI.HoloLensGPS {
         }
 
         public void ShowConcreteObject() {
-            var radianAngle = gpsObjectData.Angle / 180 * Math.PI;
-            var localPositionToCamera = new Vector4((float)(gpsObjectData.Distance * Math.Sin(radianAngle)), -1f, (float)(gpsObjectData.Distance * Math.Cos(radianAngle)), 1);
-            transform.position = Camera.main.transform.localToWorldMatrix * localPositionToCamera;
+            var radianAngle = GPSUtility.Deg2Rad(gpsObjectData.Angle);
+            var cameraAngle = GPSUtility.Deg2Rad(Camera.main.transform.eulerAngles.y);
+            //var localPositionToCamera = new Vector4((float)(gpsObjectData.Distance * Math.Sin(radianAngle)), -1f, (float)(gpsObjectData.Distance * Math.Cos(radianAngle)), 1);
+            //transform.position = Camera.main.transform.localToWorldMatrix * localPositionToCamera;
+            transform.position = Camera.main.transform.position + new Vector3((float)(gpsObjectData.Distance * Math.Sin(radianAngle + cameraAngle)), -0.5f, (float)(gpsObjectData.Distance * Math.Cos(radianAngle + cameraAngle)));
             foreach (var textMesh in textMeshes) {
                 textMesh.text = gpsObjectData.GPSObjectName;
             }
             concreteAnimator.SetBool("isVisible", true);
             uiAnimator.SetBool("isVisible", false);
+
             if (AreaEnterDebug.Instance != null) {
                 AreaEnterDebug.Instance.UpdateDebugText(gpsObjectData);
             }
+
             WorldAnchorManager.Instance.AttachAnchor(gameObject);
             audioSource.PlayOneShot(activationSound);
             floatingAreaImageInstance = Instantiate(floatingAraImagePrefab);
