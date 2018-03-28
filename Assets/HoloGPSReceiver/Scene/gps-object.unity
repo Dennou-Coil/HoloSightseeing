@@ -633,7 +633,7 @@ Prefab:
     - target: {fileID: 224274774853169986, guid: 7430baaa1c1f3534eb73727b40c0053d,
         type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 224274774853169986, guid: 7430baaa1c1f3534eb73727b40c0053d,
         type: 2}
@@ -910,6 +910,74 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1708937673
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4170064958332284, guid: 47770b55e1c12ce408617896e9c3bf4a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170064958332284, guid: 47770b55e1c12ce408617896e9c3bf4a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170064958332284, guid: 47770b55e1c12ce408617896e9c3bf4a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170064958332284, guid: 47770b55e1c12ce408617896e9c3bf4a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170064958332284, guid: 47770b55e1c12ce408617896e9c3bf4a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170064958332284, guid: 47770b55e1c12ce408617896e9c3bf4a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170064958332284, guid: 47770b55e1c12ce408617896e9c3bf4a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170064958332284, guid: 47770b55e1c12ce408617896e9c3bf4a, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 223735806980372740, guid: 47770b55e1c12ce408617896e9c3bf4a,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656755128387796, guid: 47770b55e1c12ce408617896e9c3bf4a, type: 2}
+      propertyPath: m_Name
+      value: GPSObject (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114304528847915952, guid: 47770b55e1c12ce408617896e9c3bf4a,
+        type: 2}
+      propertyPath: gpsObjectData
+      value: 
+      objectReference: {fileID: 11400000, guid: fce65db69190f394f8863ff04e33f375,
+        type: 2}
+    - target: {fileID: 114304528847915952, guid: 47770b55e1c12ce408617896e9c3bf4a,
+        type: 2}
+      propertyPath: uiDistance
+      value: 1.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 114304528847915952, guid: 47770b55e1c12ce408617896e9c3bf4a,
+        type: 2}
+      propertyPath: floatingAraImagePrefab
+      value: 
+      objectReference: {fileID: 1654692491614262, guid: 7430baaa1c1f3534eb73727b40c0053d,
+        type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 47770b55e1c12ce408617896e9c3bf4a, type: 2}
+  m_IsPrefabParent: 0
 --- !u!114 &1925309264 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114023317998667818, guid: e019b786645d62844b2382fc99a5a3df,
