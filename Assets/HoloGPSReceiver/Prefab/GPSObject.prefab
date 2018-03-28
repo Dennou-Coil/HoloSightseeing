@@ -845,6 +845,7 @@ MonoBehaviour:
   uiAnimator: {fileID: 95656931532825324}
   uiDistance: 1.5
   uiDebugText: {fileID: 114237593554427954}
+  floatingAraImagePrefab: {fileID: 0}
 --- !u!114 &114459876419666216
 MonoBehaviour:
   m_ObjectHideFlags: 1

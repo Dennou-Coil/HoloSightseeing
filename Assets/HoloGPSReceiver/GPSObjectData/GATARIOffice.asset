@@ -18,5 +18,7 @@ MonoBehaviour:
   gpsObjectName: GATARI Office
   areaInboundRadius: 25
   areaOutboundRadius: 40
-  distance: 11.704998628517847
-  angle: 83.27061315355266
+  isInside: 0
+  distance: 1.7976931348623157e+308
+  angle: 0
+  locationImage: {fileID: 21300000, guid: 5bb646613c440794aa750cc3b6ffd302, type: 3}

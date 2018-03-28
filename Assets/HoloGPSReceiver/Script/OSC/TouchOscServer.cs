@@ -11,12 +11,13 @@ using System.IO;
 using Windows.Networking.Sockets;
 #endif
 
+[DefaultExecutionOrder(-100)]
 public class TouchOscServer : MonoBehaviour
 {
-    [HideInInspector] public TouchOscServer instance;
+    public static TouchOscServer Instance { get; private set; }
 
     [System.Serializable] public class OnMessageCallback : UnityEvent<Osc.Message> { }
-    [SerializeField] private OnMessageCallback onMessageCallback;
+    [SerializeField] public OnMessageCallback onMessageCallback = new OnMessageCallback();
     [SerializeField] int listenPort = 3333;
 
     Osc.Parser osc_ = new Osc.Parser();
@@ -27,7 +28,7 @@ public class TouchOscServer : MonoBehaviour
 
     void Start()
     {
-        instance = this;
+        Instance = this;
         endPoint_ = new IPEndPoint(IPAddress.Any, listenPort);
         udpClient_ = new UdpClient(endPoint_);
     }

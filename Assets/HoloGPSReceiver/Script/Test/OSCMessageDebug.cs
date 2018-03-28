@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Text;
 
+[DefaultExecutionOrder(200)]
 public class OSCMessageDebug : MonoBehaviour {
 
     public Text text;

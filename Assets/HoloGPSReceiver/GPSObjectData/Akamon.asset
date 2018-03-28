@@ -19,5 +19,6 @@ MonoBehaviour:
   areaInboundRadius: 25
   areaOutboundRadius: 40
   isInside: 0
-  distance: 588.4591763651122
-  angle: 1.8760434588210302
+  distance: 1.7976931348623157e+308
+  angle: 0
+  locationImage: {fileID: 21300000, guid: 23e5b91914e3ca84b951b7efea235ef6, type: 3}

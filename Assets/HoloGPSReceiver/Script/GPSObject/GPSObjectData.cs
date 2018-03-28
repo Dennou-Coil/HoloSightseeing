@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UniRx;
 using UnityEngine;
-using UnityEngine.Events;
-using System;
-using UniRx;
+using UnityEngine.UI;
 
 namespace GATARI.HoloLensGPS {
 
@@ -76,6 +73,8 @@ namespace GATARI.HoloLensGPS {
                 angle = value;
             }
         }
+
+        public Sprite locationImage;
 
         public void CheckArea(double[] playerPosition, double playerAngle) {
             UpdateInformation(playerPosition, playerAngle);
