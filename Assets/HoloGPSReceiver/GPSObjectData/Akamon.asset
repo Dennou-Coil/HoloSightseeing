@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c7ff0605fa56a94b8c18707313e093b, type: 3}
+  m_Name: Akamon
+  m_EditorClassIdentifier: 
+  id: 0
+  position:
+  - 35.710625
+  - 139.760325
+  gpsObjectName: Univ.Tokyo Akamon
+  areaInboundRadius: 25
+  areaOutboundRadius: 40
+  isInside: 0
+  distance: 1.7976931348623157e+308
+  angle: 0
+  locationImage: {fileID: 21300000, guid: 23e5b91914e3ca84b951b7efea235ef6, type: 3}
