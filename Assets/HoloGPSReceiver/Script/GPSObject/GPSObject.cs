@@ -17,9 +17,10 @@ namespace GATARI.HoloLensGPS {
         public Text uiDebugText;
         public GameObject floatingAraImagePrefab;
 
-        Vector4 localPosition = new Vector4();
+        Vector3 localPosition = new Vector3();
         private Vector3 velocity = new Vector3();
         GameObject floatingAreaImageInstance;
+        double gpsAngle, cameraAngle;
 
         private void Start() {
             audioSource = GetComponent<AudioSource>();
@@ -36,28 +37,27 @@ namespace GATARI.HoloLensGPS {
 
         void CheckArea(PlayerPosture posture) {
             gpsObjectData.CheckArea(posture.playerPosition, posture.playerAngle);
+            gpsAngle = GPSUtility.Deg2Rad(gpsObjectData.Angle);
+            cameraAngle = GPSUtility.Deg2Rad(Camera.main.transform.eulerAngles.y);
+
             if (gpsObjectData.IsInside.Value) {
                 if (AreaEnterDebug.Instance != null) {
                     AreaEnterDebug.Instance.UpdateDebugText(this.gpsObjectData);
                 }
             }
+        }
 
+        private void Update() {
             if (!gpsObjectData.IsInside.Value) {
-                var radianAngle = gpsObjectData.Angle / 180 * Math.PI;
-                localPosition.Set((float)(uiDistance * Math.Sin(radianAngle)), 0, (float)(uiDistance * Math.Cos(radianAngle)), 1);
-                //transform.position = Camera.main.transform.localToWorldMatrix * localPosition;
-                transform.position = Vector3.SmoothDamp(transform.position, Camera.main.transform.localToWorldMatrix * localPosition, ref velocity, 0.1f);
+                localPosition.Set((float)(uiDistance * Math.Sin(gpsAngle+cameraAngle)), 0, (float)(uiDistance * Math.Cos(gpsAngle+cameraAngle)));
+                transform.position = Vector3.SmoothDamp(transform.position, Camera.main.transform.position + localPosition, ref velocity, 0.1f);
                 transform.LookAt(2 * transform.position - Camera.main.transform.position);
                 uiDebugText.text = string.Format("Area: {0}\nAngle: {1}\nDistance: {2}", gpsObjectData.GPSObjectName, gpsObjectData.Angle.ToString("0.0"), gpsObjectData.Distance.ToString("0.0"));
             }
         }
 
         public void ShowConcreteObject() {
-            var radianAngle = GPSUtility.Deg2Rad(gpsObjectData.Angle);
-            var cameraAngle = GPSUtility.Deg2Rad(Camera.main.transform.eulerAngles.y);
-            //var localPositionToCamera = new Vector4((float)(gpsObjectData.Distance * Math.Sin(radianAngle)), -1f, (float)(gpsObjectData.Distance * Math.Cos(radianAngle)), 1);
-            //transform.position = Camera.main.transform.localToWorldMatrix * localPositionToCamera;
-            transform.position = Camera.main.transform.position + new Vector3((float)(gpsObjectData.Distance * Math.Sin(radianAngle + cameraAngle)), -0.5f, (float)(gpsObjectData.Distance * Math.Cos(radianAngle + cameraAngle)));
+            transform.position = Camera.main.transform.position + new Vector3((float)(gpsObjectData.Distance * Math.Sin(gpsAngle + cameraAngle)), -0.5f, (float)(gpsObjectData.Distance * Math.Cos(gpsAngle + cameraAngle)));
             foreach (var textMesh in textMeshes) {
                 textMesh.text = gpsObjectData.GPSObjectName;
             }
