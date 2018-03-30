@@ -21,14 +21,13 @@ namespace GATARI.HoloLensGPS {
         }
         
         public class PostureUpdateEvent : UnityEvent<PlayerPosture> { }
-        public PostureUpdateEvent onPostureUpdate;
+        public PostureUpdateEvent onPostureUpdate = new PostureUpdateEvent();
 
         void Start() {
             Instance = this;
             Posture = new PlayerPosture() {
                 playerPosition = new double[2]
             };
-            onPostureUpdate = new PostureUpdateEvent();
         }
 
         public void UpdatePositionAndAngle(Message msg) {
