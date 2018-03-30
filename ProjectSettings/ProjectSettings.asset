@@ -11,7 +11,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: Dennou-Coil
   productName: HoloGPSReceiver
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -594,7 +594,7 @@ PlayerSettings:
       Proximity: False
       RemovableStorage: False
       SharedUserCertificates: False
-      SpatialPerception: True
+      SpatialPerception: False
       UserAccountInformation: False
       VideosLibrary: False
       VoipCall: False

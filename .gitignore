@@ -92,4 +92,5 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-
+# Asset Store Purchase
+Assets/Infinity Code*

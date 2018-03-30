@@ -79,6 +79,7 @@ namespace GATARI.HoloLensGPS {
                 image.sprite = Resources.Load("missing", typeof(Sprite)) as Sprite;
             }
             image.preserveAspect = true;
+            floatingAreaImageInstance.GetComponentInChildren<Text>().text = gpsObjectData.GPSObjectName;
         }
 
         public void ShowUIObject() {
